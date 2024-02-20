@@ -53,9 +53,9 @@ theme:
 not_in_nav: |
   index.md
 
-plugins:
-  - search
-  - awesome-pages
+#plugins:
+#  - search
+#  - awesome-pages
 
 # 插入代码高亮等设置
 markdown_extensions:
