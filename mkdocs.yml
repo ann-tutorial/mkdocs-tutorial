@@ -40,22 +40,16 @@ theme:
       accent: lime
 
 ## 设置导航顺序
-#nav:
-##  - index.md
-##  - Tools
-##  - ...
-##  - Blog
-#  - Tools: Tools/MkDocs/MkDocs.md
-##  - test: ../Tools/MkDocs/..
-#  - Blog: Blog/Python/测试.md
-##      - ...
+nav:
+  - ... | Tools/*/*.md
+  - ... | Blog/*/*.md
 
 not_in_nav: |
-  index.md
+  /index.md
 
-#plugins:
+plugins:
 #  - search
-#  - awesome-pages
+  - awesome-pages
 
 # 插入代码高亮等设置
 markdown_extensions:
