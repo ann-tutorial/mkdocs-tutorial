@@ -1,11 +1,18 @@
 site_name: 清华的学习笔记
 theme:
-  name: material # 主题
+  name: material # 主题 material
+  icon:
+#    logo: fontawesome/solid/user-nurse # logo图标
   features:
     - navigation.tabs # 添加会存在导航栏
-    - navigation.sections # 添加导航栏的章节
+#    - navigation.sections # 添加导航栏的章节(开启后，导航目录全部展开)
 #    - toc.integrate # 添加目录
     - navigation.top # 添加返回顶部按钮
+#    - navigation.scroll # 添加滚动导航
+#    - navigation.tabs.sticky # 添加导航栏固定
+#    - navigation.infinite # 添加无限滚动
+    - navigation.instant # 添加即时导航
+    - navigation.tracking # 添加即时导航预加载
     - search.suggest # 添加搜索框
     - search.highlight # 添加搜索结果高亮
     - content.tabs.link # 添加内容页的导航栏
@@ -17,20 +24,38 @@ theme:
     - search.language # 添加搜索语言
     - search.word # 添加搜索结果关键词
     - search.pager # 添加搜索结果分页
-  language: zh # 语言
+  language: zh # 语言(en/zh)
   palette:
     - scheme: "default" # 配色方案
       toggle:
         icon: material/toggle-switch-off-outline # 切换图标
         name: "switch to dark mode" # 切换名称
       primary: dark # 主色
-      accent: purple # 强调色
+      accent: lime # 强调色
     - scheme: slate
       toggle:
         icon: material/toggle-switch
         name: "switch to light mode"
-      primary: teal
+      primary: dark
       accent: lime
+
+## 设置导航顺序
+#nav:
+##  - index.md
+##  - Tools
+##  - ...
+##  - Blog
+#  - Tools: Tools/MkDocs/MkDocs.md
+##  - test: ../Tools/MkDocs/..
+#  - Blog: Blog/Python/测试.md
+##      - ...
+
+not_in_nav: |
+  index.md
+
+plugins:
+  - search
+  - awesome-pages
 
 # 插入代码高亮等设置
 markdown_extensions:
@@ -49,7 +74,6 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-
 extra:
   social:
     - icon: fontawesome/brands/github
