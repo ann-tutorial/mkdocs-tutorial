@@ -1,17 +1,3 @@
-## Welcome to MkDocs
-
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+## 目录导航
+* [Tools](http://127.0.0.1:8000/Tools/MkDocs/MkDocs/)
+* [Blogs](http://127.0.0.1:8000/Blog/Python/%E6%B5%8B%E8%AF%95/)

@@ -1,85 +1,88 @@
 site_name: 清华的学习笔记
+site_url: https://ann.cn
 theme:
   name: material # 主题 material
   icon:
 #    logo: fontawesome/solid/user-nurse # logo图标
+  language: en # 语言(en/zh)
+  font:
+    text: "Roboto" # 正文字体
+    code: "Roboto Mono" # 代码字体
+  palette:
+    - scheme: "default" # 配色方案: 默认只有两个选项可选：default（亮主题）、slate（暗主题）
+      toggle:
+        icon: material/toggle-switch-off-outline # 切换图标
+        name: "switch to dark mode" # 切换名称
+      primary: indigo # 调整主色调
+      accent: indigo # 调整hovered, buttons, scrollbars等颜色
+    - scheme: "slate"
+      toggle:
+        icon: material/toggle-switch
+        name: "switch to light mode"
+      primary: indigo
+      accent: indigo
   features:
-    - navigation.tabs # 添加会存在导航栏
+    - navigation.tabs # 顶部显示导航顶层nav（也就是第一个节点）
+    - navigation.tabs.sticky # 滚动时显示顶部nav，需要配合navigation.tabs使用
 #    - navigation.sections # 添加导航栏的章节(开启后，导航目录全部展开)
+#    - navigation.expand # 不折叠左侧nav节点
 #    - toc.integrate # 添加目录
     - navigation.top # 添加返回顶部按钮
 #    - navigation.scroll # 添加滚动导航
-#    - navigation.tabs.sticky # 添加导航栏固定
 #    - navigation.infinite # 添加无限滚动
     - navigation.instant # 添加即时导航
-    - navigation.tracking # 添加即时导航预加载
-    - search.suggest # 添加搜索框
-    - search.highlight # 添加搜索结果高亮
+    - navigation.tracking # 在url中使用标题定位锚点
+    - navigation.top # 添加返回顶部按钮
     - content.tabs.link # 添加内容页的导航栏
     - content.code.copy # 添加代码复制按钮
+    - content.code.annotate # 添加代码注释
     - content.code.annotation # 添加代码行号
     - content.code.highlights # 添加代码高亮
+    - search.suggest # 添加搜索框
+    - search.highlight # 添加搜索结果高亮
     - search.full # 添加全文搜索
     - search.auto # 添加自动搜索
     - search.language # 添加搜索语言
     - search.word # 添加搜索结果关键词
     - search.pager # 添加搜索结果分页
-  language: zh # 语言(en/zh)
-  palette:
-    - scheme: "default" # 配色方案
-      toggle:
-        icon: material/toggle-switch-off-outline # 切换图标
-        name: "switch to dark mode" # 切换名称
-      primary: dark # 主色
-      accent: lime # 强调色
-    - scheme: slate
-      toggle:
-        icon: material/toggle-switch
-        name: "switch to light mode"
-      primary: dark
-      accent: lime
+
 
 ## 设置导航顺序
 nav:
   - ... | Tools/*/*.md
   - ... | Blog/*/*.md
 
-not_in_nav: |
-  /index.md
 
 plugins:
-#  - search
-  - awesome-pages
+  - search # 搜索插件
+#    separator: '[\s\u200b\-]'
+  - awesome-pages # 目录插件
 
 # 插入代码高亮等设置
 markdown_extensions:
-  - pymdownx.highlight:
+  - def_list # 定义列表
+  - attr_list # 属性列表
+  - admonition # 提示框
+  - meta # 元数据
+  - footnotes # 脚注
+  - pymdownx.highlight: # 代码高亮
       anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - admonition
-  - pymdownx.arithmatex:
+  - pymdownx.inlinehilite # 行内代码高亮
+  - pymdownx.snippets # 代码片段
+  - pymdownx.superfences # 代码块
+  - pymdownx.arithmatex: # 数学公式
       generic: true
-  - footnotes
-  - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.mark
-  - attr_list
-  - pymdownx.emoji:
+  - pymdownx.details # 详情
+  - pymdownx.superfences # 代码块
+  - pymdownx.mark # 标记
+  - pymdownx.emoji: # emoji
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com
-    - icon: fontawesome/brands/twitter
-      link: https://github.com
-    - icon: fontawesome/brands/facebook
-      link: https://github.com
-    - icon: fontawesome/brands/instagram
-      link: https://github.com
-    - icon: fontawesome/brands/linkedin
-      link: https://github.com
+  - pymdownx.tabbed: # 标签页
+      alternate_style: true
+  - pymdownx.tasklist: # 任务列表
+      custom_checkbox: true
 
-copyright:
-#  &copy; 2021 <a href="https://baidu.com" target="_blank" rel="noopener"> James </a>
+#copyright:
+#  copyright &copy; 2021 <a href="https://baidu.com" target="_blank" rel="noopener"> James </a>
+
