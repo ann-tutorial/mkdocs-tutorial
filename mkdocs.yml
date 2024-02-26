@@ -49,6 +49,8 @@ theme:
 
 ## 设置导航顺序
 nav:
+  - ... | Python/*/*.md
+  - ... | Performance/*/*.md
   - ... | Tools/*/*.md
   - ... | Blog/*/*.md
 
