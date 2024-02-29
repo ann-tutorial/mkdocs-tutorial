@@ -2,7 +2,7 @@
 title: Pydantic
 ---
 !!! quote
-    用于数据验证和设置第三方库。它提供了一种简单且直观的方式来定义数据模型，并使用这些模型对数据进行验证和转换(to dict or json)。
+    用于数据验证和设置的第三方库。它提供了一种简单且直观的方式来定义数据模型，并使用这些模型对数据进行验证和转换(to dict or json)。
 
 ### 特性
 ```text title="Pydantic 的一些主要特性"
@@ -42,12 +42,13 @@ pip install pydantic
 === "Pydantic 高级操作"
     ```text
     Pydantic 还可以结合 typing 模块，进行默认值，可选字段属性等验证的高级操作。
-    甚至还可以通过 EmailStr 类来直接验证邮件正确性，但该类依赖一个第三方模块，在使用前需要使用 pip install email-validator 进行安装后才可以使用。
+    甚至还可以通过 EmailStr 类来直接验证邮件正确性， 但该类依赖一个第三方模块，在使用前需要进行安装后才可以使用。
+        - pip install email-validator 
     ```
     ```py linenums="1"
 
     from typing import Optional
-    from pydantic import BaseModel, EmailStr
+    from pydantic import BaseModel, EmailStr, ValidationError
     
     class User(BaseModel):
         name: str
@@ -56,8 +57,12 @@ pip install pydantic
         phone: Optional[str] = None
     
     
-    user = User(name="Alice", age=30, email="alice@example.com")  # 有效
-    user = User(name="Alice", age=30, email="invalid_email")  # 错误：无效的电子邮件
+    try:
+        # user = User(name="Alice", age=30, email="alice@example.com")  # 有效
+        user = User(name="Alice", age=30, email="invalid_email")  # 错误：无效的电子邮件
+    except ValidationError as e:
+        print(e.json())
+
     ```
 
 === "Field 对象"
