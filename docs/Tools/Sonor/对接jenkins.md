@@ -29,3 +29,7 @@ title: Sonor对接Jenkins
 ### 查看Sonor报告
 1. 在SonarQube上查看报告(原则上需要无bug, 无漏洞, 无代码异味, 无重复率)
     ![查看报告](../../img/Tools/Sonor/10.png)
+
+### 权限配置
+- 在sonar上面是有权限查看源码的，新建项目后需要更新项目权限设置 1. 为私有，其它用户不可查看源码
+![权限配置](../../img/Tools/Sonor/11.png)
